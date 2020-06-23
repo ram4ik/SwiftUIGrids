@@ -22,7 +22,7 @@ struct ContentView: View {
         VStack {
             Text("SwiftUI Grids").padding()
             ScrollView {
-                LazyVGrid(columns: columns) {
+                LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(emoijs, id: \.self) { emoji in
                         Text(emoji)
                             .font(.system(size: 100))
