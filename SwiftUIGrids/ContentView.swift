@@ -18,7 +18,7 @@ struct ContentView: View {
         GridItem(.adaptive(minimum: 100))
     ]
     
-    let columnsForHorizontal = [
+    let rows = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
@@ -35,7 +35,7 @@ struct ContentView: View {
                 }
             }
             ScrollView(.horizontal) {
-                LazyHGrid(rows: columnsForHorizontal, spacing: 60) {
+                LazyHGrid(rows: rows, spacing: 60) {
                     ForEach(emoijs, id: \.self) { emoji in
                         Text(emoji)
                             .font(.system(size: 100))
