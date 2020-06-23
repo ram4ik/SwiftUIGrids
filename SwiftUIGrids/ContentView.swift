@@ -18,11 +18,24 @@ struct ContentView: View {
         GridItem(.adaptive(minimum: 100))
     ]
     
+    let columnsForHorizontal = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
         VStack {
             Text("SwiftUI Grids").padding()
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(emoijs, id: \.self) { emoji in
+                        Text(emoji)
+                            .font(.system(size: 100))
+                    }
+                }
+            }
+            ScrollView(.horizontal) {
+                LazyHGrid(rows: columnsForHorizontal, spacing: 60) {
                     ForEach(emoijs, id: \.self) { emoji in
                         Text(emoji)
                             .font(.system(size: 100))
