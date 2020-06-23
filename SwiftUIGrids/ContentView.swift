@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let emoijs = ["🥰", "😘", "😂", "😍", "🤪", "🤠", "😇", "😎", "😋"]
+    
+    let columns = [GridItem(.adaptive(minimum: 100))]
+    
     var body: some View {
-        Text("SwiftUI Grids").padding()
+        VStack {
+            Text("SwiftUI Grids").padding()
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(emoijs, id: \.self) { emoji in
+                        Text(emoji)
+                            .font(.system(size: 100))
+                    }
+                }
+            }
+        }.padding(.all, 10)
     }
 }
 
