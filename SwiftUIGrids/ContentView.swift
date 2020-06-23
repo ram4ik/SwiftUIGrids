@@ -11,7 +11,10 @@ struct ContentView: View {
     
     let emoijs = ["🥰", "😘", "😂", "😍", "🤪", "🤠", "😇", "😎", "😋"]
     
-    let columns = [GridItem(.adaptive(minimum: 100))]
+    let columns = [
+        //GridItem(.flexible())
+        GridItem(.adaptive(minimum: 100))
+    ]
     
     var body: some View {
         VStack {
